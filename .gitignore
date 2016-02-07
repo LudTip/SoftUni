@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BabaTanche2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] FirstInput = Console.ReadLine().Split();
+            string[] SekondInput = Console.ReadLine().Split();
+            string[] TurdtInput = Console.ReadLine().Split();
+
+            int firstClassIncam = (Convert.ToInt32(FirstInput[0])) - Convert.ToInt32(FirstInput[1])*7000;
+            firstClassIncam += (int) (Convert.ToInt32(FirstInput[1])*(7000*0.3));
+            firstClassIncam += (int)(Convert.ToInt32(FirstInput[2]) * (0.005 * 7000));
+
+            int sekondClassIncam = (Convert.ToInt32(SekondInput[0])) - Convert.ToInt32(SekondInput[1]) * 3500;
+            sekondClassIncam += (int)(Convert.ToInt32(SekondInput[1]) * (3500 * 0.3));
+            sekondClassIncam += (int)(Convert.ToInt32(SekondInput[2]) * (0.005 * 3500));
+
+            int turdClassIncam = (Convert.ToInt32(TurdtInput[0])) - Convert.ToInt32(TurdtInput[1]) * 1000;
+            turdClassIncam += (int)(Convert.ToInt32(TurdtInput[1]) * (1000 * 0.3));
+            turdClassIncam += (int)(Convert.ToInt32(TurdtInput[2]) * (0.005 * 1000));
+
+            int totalIncome = firstClassIncam + sekondClassIncam + turdClassIncam;
+
+            int maxIncome = (int)(12 * 7000 + 12 * (0.005 * 7000)) + (int)(28 * 3500 + 28 * (0.005 * 3500)) + (int)(50 * 1000 + 50 * (0.005 * 1000));
+
+            Console.WriteLine(totalIncome);
+            Console.WriteLine(maxIncome - totalIncome);
+
+
+        }
+    }
+}
